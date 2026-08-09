@@ -21,8 +21,8 @@ jobs:
           language: 'golang'
           versions_to_fetch: '3'
 
-  setup-lts-environment:
-    name: Setup environment | Go ${{ matrix.lts_version }}
+  setup-environment-run-build:
+    name: Build | Go ${{ matrix.lts_version }}
     runs-on: ubuntu-22.04
     needs: get-lts-version
     strategy:
@@ -32,12 +32,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
-      - name: Set up environment
+      - name: Set up environment ${{ matrix.lts_version }}
         uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
         with:
           go-version: ${{ matrix.lts_version }}
           architecture: 'x64'
 
-      - name: Run build
+      - name: Build
         shell: bash
         run: go build .
