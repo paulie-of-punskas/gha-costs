@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
       - name: Get LTS for Golang
-        uses: paulie-of-punskas/get-lts-versions@6e9d3fcd7129bdbb9596737a1842224b866f3e43 # v1.0.2
+        uses: paulie-of-punskas/get-lts-versions@c63a51cd259a35cd4f0a2f87215198d4ee3b833c # v1.0.3
         id: getLTSversion
         with:
           language: 'golang'
