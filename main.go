@@ -1,17 +1,18 @@
 package main
 
 import (
-	"log"
-	"fmt"
 	"flag"
+	"fmt"
+	"log"
 )
 
 var appVersion = "1.0.0"
+var gitHubPat = ""
 
 func main() {
 	printAbout := flag.Bool("about", false, "Print information about this app.")
 
-	flag.Parse();
+	flag.Parse()
 
 	if *printAbout {
 		author := "paulie-of-punskas, a.k.a. paulie-aus-punskas"
@@ -20,6 +21,6 @@ func main() {
 			"\nNo AI data center was used to produce this code."
 		log.Printf("[Author]\n%s \n\n[App version]\n%s \n\n[About]\n%s", author, appVersion, appAbout)
 	} else {
-		fmt.Printf("Available flags: %s\n", "\n-about")
+		fmt.Printf("Available flags:\n%s%s", "-about\n", "-check_connection\n")
 	}
 }
