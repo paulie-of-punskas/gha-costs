@@ -15,11 +15,10 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
       - name: Get LTS for Golang
-        uses: paulie-of-punskas/get-lts-versions@c63a51cd259a35cd4f0a2f87215198d4ee3b833c # v1.0.3
+        uses: paulie-of-punskas/get-lts-versions@42c4bebdaf53b932d3dd67e428437f78d8b4a7a0 # v1.0.5
         id: getLTSversion
         with:
           language: 'golang'
-          versions_to_fetch: '3'
 
   setup-environment-run-build:
     name: Build | Go ${{ matrix.lts_version }}
