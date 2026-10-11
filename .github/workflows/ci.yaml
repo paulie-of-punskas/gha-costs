@@ -40,3 +40,7 @@ jobs:
       - name: Build
         shell: bash
         run: go build .
+
+      - name: Run built app
+        shell: bash
+        run: ./cli-gha-costs
